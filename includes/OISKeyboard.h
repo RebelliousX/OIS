@@ -25,6 +25,8 @@ restrictions:
 #include "OISObject.h"
 #include "OISEvents.h"
 
+#include <map>
+
 namespace OIS
 {
 	//! Keyboard scan codes
@@ -177,6 +179,158 @@ namespace OIS
 		KC_MEDIASELECT = 0xED     // Media Select
 	};
 
+	struct
+	{
+		std::string KeyName;
+		unsigned char KeyCode;
+	}
+	const KeyNameToKeyCode[] = {
+		"ESCAPE"				, 0x1   ,
+		"1"						, 0x2   ,
+		"2"						, 0x3   ,
+		"3"						, 0x4   ,
+		"4"						, 0x5   ,
+		"5"						, 0x6   ,
+		"6"						, 0x7   ,
+		"7"						, 0x8   ,
+		"8"						, 0x9   ,
+		"9"						, 0xA   ,
+		"0"						, 0xB   ,
+		"MINUS"					, 0xC   ,        // - on main keyboard
+		"EQUALS"				, 0xD   ,
+		"BACK"				    , 0xE   ,        // backspace
+		"TAB"					, 0xF   ,
+		"Q"						, 0x10  ,
+		"W"						, 0x11  ,
+		"E"						, 0x12  ,
+		"R"						, 0x13  ,
+		"T"						, 0x14  ,
+		"Y"						, 0x15  ,
+		"U"						, 0x16  ,
+		"I"						, 0x17  ,
+		"O"						, 0x18  ,
+		"P"						, 0x19  ,
+		"LBRACKET"				, 0x1A  ,
+		"RBRACKET"				, 0x1B  ,
+		"RETURN"				, 0x1C  , 		// Enter on main keyboard
+		"LCONTROL"				, 0x1D  ,
+		"A"						, 0x1E  ,
+		"S"						, 0x1F  ,
+		"D"						, 0x20  ,
+		"F"						, 0x21  ,
+		"G"						, 0x22  ,
+		"H"						, 0x23  ,
+		"J"						, 0x24  ,
+		"K"						, 0x25  ,
+		"L"						, 0x26  ,
+		"SEMICOLON"				, 0x27  ,
+		"APOSTROPHE"			, 0x28  ,
+		"GRAVE"					, 0x29  , 		// accent grave
+		"LSHIFT"				, 0x2A  ,
+		"BACKSLASH"				, 0x2B  ,
+		"Z"						, 0x2C  ,
+		"X"						, 0x2D  ,
+		"C"						, 0x2E  ,
+		"V"						, 0x2F  ,
+		"B"						, 0x30  ,
+		"N"						, 0x31  ,
+		"M"						, 0x32  ,
+		"COMMA"					, 0x33  ,
+		"PERIOD"				, 0x34  , 		// . on main keyboard
+		"SLASH"					, 0x35  , 		// / on main keyboard
+		"RSHIFT"				, 0x36  ,
+		"MULTIPLY"				, 0x37  , 		// * on numeric keypad
+		"LMENU"					, 0x38  , 		// left Alt
+		"SPACE"					, 0x39  ,
+		"CAPITAL"				, 0x3A  ,
+		"F1"					, 0x3B  ,
+		"F2"					, 0x3C  ,
+		"F3"					, 0x3D  ,
+		"F4"					, 0x3E  ,
+		"F5"					, 0x3F  ,
+		"F6"					, 0x40  ,
+		"F7"					, 0x41  ,
+		"F8"					, 0x42  ,
+		"F9"					, 0x43  ,
+		"F10"					, 0x44  ,
+		"NUMLOCK"				, 0x45  ,
+		"SCROLL"				, 0x46  , 			// Scroll Lock
+		"NUMPAD7"				, 0x47  ,
+		"NUMPAD8"				, 0x48  ,
+		"NUMPAD9"				, 0x49  ,
+		"SUBTRACT"				, 0x4A  , 			// - on numeric keypad
+		"NUMPAD4"				, 0x4B  ,
+		"NUMPAD5"				, 0x4C  ,
+		"NUMPAD6"				, 0x4D  ,
+		"ADD"					, 0x4E  , 			// + on numeric keypad
+		"NUMPAD1"				, 0x4F  ,
+		"NUMPAD2"				, 0x50  ,
+		"NUMPAD3"				, 0x51  ,
+		"NUMPAD0"				, 0x52  ,
+		"DECIMAL"				, 0x53  , 			// . on numeric keypad
+		"OEM_102 < > | on UK/Germany keyboards"									, 0x56  ,
+		"F11"																	, 0x57  ,
+		"F12"																	, 0x58  ,
+		"F13 on (NEC PC98) "													, 0x64  ,
+		"F14 on (NEC PC98) "													, 0x65  ,
+		"F15 on (NEC PC98) "													, 0x66  ,
+		"KANA on (Japanese keyboard)"											, 0x70  ,
+		"ABNT_C1 / ? on Portugese (Brazilian) keyboards "						, 0x73  ,
+		"CONVERT on (Japanese keyboard)"										, 0x79  ,
+		"NOCONVERT on (Japanese keyboard)"										, 0x7B  ,
+		"YEN on (Japanese keyboard)"											, 0x7D  ,
+		"ABNT_C2 on Numpad . on Portugese (Brazilian) keyboards "				, 0x7E  ,
+		"NUMPADEQUALS = on numeric keypad (NEC PC98) "							, 0x8D  ,
+		"PREVTRACK on Previous Track (DIK_CIRCUMFLEX on Japanese keyboard) "	, 0x90  ,
+		"AT (NEC PC98) "					, 0x91  ,
+		"COLON (NEC PC98) "					, 0x92  ,
+		"UNDERLINE (NEC PC98) "				, 0x93  ,
+		"KANJI on (Japanese keyboard)"		, 0x94  ,
+		"STOP (NEC PC98) "		, 0x95  ,
+		"AX (Japan AX) "		, 0x96  ,
+		"UNLABELED (J3100) "	, 0x97  ,
+		"NEXTTRACK"		, 0x99  , 	// Next Track
+		"NUMPADENTER"	, 0x9C  , 	// Enter on numeric keypad
+		"RCONTROL"		, 0x9D,
+		"MUTE"			, 0xA0,		// Mute
+		"CALCULATOR"	, 0xA1,		// Calculator
+		"PLAYPAUSE"		, 0xA2,		// Play / Pause
+		"MEDIASTOP"		, 0xA4,		// Media Stop
+		"VOLUMEDOWN"	, 0xAE,		// Volume -
+		"VOLUMEUP"		, 0xB0,		// Volume +
+		"WEBHOME"		, 0xB2,		// Web home
+		"NUMPADCOMMA"	, 0xB3,		// , on numeric keypad (NEC PC98)
+		"DIVIDE"		, 0xB5,		// / on numeric keypad
+		"SYSRQ"			, 0xB7,
+		"RMENU"			, 0xB8,		// right Alt
+		"PAUSE"			, 0xC5,		// Pause
+		"HOME"			, 0xC7,		// Home on arrow keypad
+		"UP"			, 0xC8,		// UpArrow on arrow keypad
+		"PRIOR"			, 0xC9,		// PgUp on arrow keypad
+		"LEFT"			, 0xCB,		// LeftArrow on arrow keypad
+		"RIGHT"			, 0xCD,		// RightArrow on arrow keypad
+		"END"			, 0xCF,		// End on arrow keypad
+		"DOWN"			, 0xD0,		// DownArrow on arrow keypad
+		"NEXT"			, 0xD1,		// PgDn on arrow keypad
+		"INSERT"		, 0xD2,		// Insert on arrow keypad
+		"DELETE"		, 0xD3,		// Delete on arrow keypad
+		"LWIN"			, 0xDB,		// Left Windows key
+		"RWIN"			, 0xDC,		// Right Windows key
+		"APPS"			, 0xDD,		// AppMenu key
+		"POWER"			, 0xDE,		// System Power
+		"SLEEP"			, 0xDF,		// System Sleep
+		"WAKE"			, 0xE3,		// System Wake
+		"WEBSEARCH"		, 0xE5,		// Web Search
+		"WEBFAVORITES"	, 0xE6 ,	// Web Favorites
+		"WEBREFRESH"	, 0xE7,		// Web Refresh
+		"WEBSTOP"		, 0xE8,		// Web Stop
+		"WEBFORWARD"	, 0xE9,		// Web Forward
+		"WEBBACK"		, 0xEA,		// Web Back
+		"MYCOMPUTER"	, 0xEB,		// My Computer
+		"MAIL"			, 0xEC,		// Mail
+		"MEDIASELECT"	, 0xED  ,	// Media Select
+	};
+	
 	/**
 		Specialised for key events
 	*/

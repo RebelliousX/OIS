@@ -391,7 +391,7 @@ void Win32ForceFeedback::_setCommonProperties(
 }
 
 //--------------------------------------------------------------//
-void Win32ForceFeedback::_upload( GUID guid, DIEFFECT* diEffect, const Effect* effect)
+void Win32ForceFeedback::_upload( const GUID &guid, DIEFFECT* diEffect, const Effect* effect)
 {
 	LPDIRECTINPUTEFFECT dxEffect = 0;
 

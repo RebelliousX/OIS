@@ -50,8 +50,14 @@ namespace OIS
 		/** @copydoc Keyboard::getAsString */
 		virtual const std::string& getAsString(KeyCode kc);
 
-		/** @copydoc Keyboard::getAsKeyCode */        
-		virtual KeyCode getAsKeyCode( std::string str ) {/*TODO: Implement OS version*/;}
+		/** @copydoc Keyboard::getAsKeyCode */
+		virtual KeyCode getAsKeyCode( std::string str ) 
+		{
+			for (int i = 0; i < sizeof(OIS::KeyNameToKeyCode) / sizeof(*OIS::KeyNameToKeyCode); ++i)
+				if (str == OIS::KeyNameToKeyCode[i].KeyName)
+					return (KeyCode)OIS::KeyNameToKeyCode[i].KeyCode;
+			return (KeyCode) 0;
+		}
 
 		/** @copydoc Keyboard::copyKeyStates */
 		virtual void copyKeyStates(char keys[256]) const;

@@ -252,7 +252,7 @@ Object* Win32InputManager::createObject(InputManager* creator, Type iType, bool 
 	{
 		for(JoyStickInfoList::iterator i = unusedJoyStickList.begin(); i != unusedJoyStickList.end(); ++i)
 		{
-			if(vendor == "" || i->vendor == vendor)
+			if(vendor.length() == 0 || i->vendor == vendor)
 			{
 				obj = new Win32JoyStick(this, mDirectInput, bufferMode, joySettings, *i);
 				unusedJoyStickList.erase(i);

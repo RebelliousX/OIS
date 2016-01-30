@@ -85,7 +85,7 @@ namespace OIS
 									LONG* rglDirection, DIENVELOPE* diEnvelope, DWORD struct_size,
 									LPVOID struct_type, const Effect* effect, const Envelope* envelope );
 		//Actually do the upload
-		void _upload( GUID, DIEFFECT*, const Effect* );
+		void _upload( const GUID &, DIEFFECT*, const Effect* );
 
 		// Map of currently uploaded effects (handle => effect)
 		typedef std::map<int,LPDIRECTINPUTEFFECT> EffectList;

@@ -68,8 +68,10 @@ Win32JoyStick::Win32JoyStick( InputManager* creator, IDirectInput8* pDI, bool bu
 	coopSetting(coopSettings),
 	mJoyStick(0),
 	mJoyInfo(info),
-	mFfDevice(0)
+	mFfDevice(0),
+	_AxisNumber(0)
 {
+	memset(&mDIJoyCaps, 0, sizeof(DIDEVCAPS));
 }
 
 //--------------------------------------------------------------------------------------------------//

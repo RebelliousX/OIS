@@ -64,7 +64,7 @@ bool ForceFeedback::supportsEffect(Effect::EForce force, Effect::EType type) con
     const std::pair<SupportedEffectList::const_iterator, SupportedEffectList::const_iterator>
 	    iterRange = mSupportedEffects.equal_range(force);
 	SupportedEffectList::const_iterator iter;
-	for (iter = iterRange.first; iter != iterRange.second; iter++)
+	for (iter = iterRange.first; iter != iterRange.second; ++iter)
 	{
 	  if ((*iter).second == type)
 		return true;

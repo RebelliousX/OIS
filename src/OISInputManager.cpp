@@ -191,7 +191,7 @@ Object* InputManager::createInputObject( Type iType, bool bufferMode, const std:
 	{
 		if( (*i)->freeDevices(iType) > 0 )
 		{
-			if( vendor == "" || (*i)->vendorExist(iType, vendor) )
+			if( vendor.length() == 0 || (*i)->vendorExist(iType, vendor) )
 			{
 				obj = (*i)->createObject(this, iType, bufferMode, vendor);
 				mFactoryObjects[obj] = (*i);

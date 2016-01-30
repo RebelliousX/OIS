@@ -25,8 +25,6 @@ restrictions:
 #include "OISObject.h"
 #include "OISEvents.h"
 
-#include <map>
-
 namespace OIS
 {
 	//! Keyboard scan codes

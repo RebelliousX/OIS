@@ -183,6 +183,7 @@ namespace OIS
 		unsigned char KeyCode;
 	}
 	const KeyNameToKeyCode[] = {
+		""						, 0x0	,
 		"ESCAPE"				, 0x1   ,
 		"1"						, 0x2   ,
 		"2"						, 0x3   ,

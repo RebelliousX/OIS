@@ -291,7 +291,7 @@ const std::string& Win32Keyboard::getAsString(KeyCode kc)
 	for (int i = 0; i < sizeof(OIS::KeyNameToKeyCode) / sizeof(*OIS::KeyNameToKeyCode); ++i)
 		if(kc == (KeyCode)OIS::KeyNameToKeyCode[i].KeyCode)
 			return mGetString.assign(OIS::KeyNameToKeyCode[i].KeyName);
-	return mGetString.assign("");
+	return mGetString.assign(OIS::KeyNameToKeyCode[KC_UNASSIGNED].KeyName);
 }
 
 //--------------------------------------------------------------------------------------------------//

@@ -445,7 +445,7 @@ namespace OIS
 		@returns
 			The matching KeyCode
 		*/
-		virtual OIS::KeyCode getAsKeyCode(std::string str) = 0;
+		virtual OIS::KeyCode getAsKeyCode(const std::string &str) = 0;
 
 		/**
 		@remarks

@@ -51,7 +51,7 @@ namespace OIS
 		virtual const std::string& getAsString(KeyCode kc);
 
 		/** @copydoc Keyboard::getAsKeyCode */
-		virtual KeyCode getAsKeyCode( std::string str ) 
+		virtual KeyCode getAsKeyCode( const std::string &str ) 
 		{
 			for (int i = 0; i < sizeof(OIS::KeyNameToKeyCode) / sizeof(*OIS::KeyNameToKeyCode); ++i)
 				if (str == OIS::KeyNameToKeyCode[i].KeyName)

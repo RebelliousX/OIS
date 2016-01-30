@@ -288,24 +288,10 @@ bool Win32Keyboard::isKeyDown( KeyCode key ) const
 //--------------------------------------------------------------------------------------------------//
 const std::string& Win32Keyboard::getAsString(KeyCode kc)
 {
-	char temp[256];
-
-	DIPROPSTRING prop;
-	prop.diph.dwSize = sizeof(DIPROPSTRING);
-	prop.diph.dwHeaderSize = sizeof(DIPROPHEADER);
-	prop.diph.dwObj = static_cast<DWORD>(kc);
-	prop.diph.dwHow = DIPH_BYOFFSET;
-
-	if (SUCCEEDED(mKeyboard->GetProperty(DIPROP_KEYNAME, &prop.diph)))
-	{
-		// convert the WCHAR in "wsz" to multibyte
-		if (WideCharToMultiByte(CP_ACP, 0, prop.wsz, -1, temp, sizeof(temp), NULL, NULL))
-			return mGetString.assign(temp);
-	}
-
-	std::stringstream ss;
-	ss << "Key_" << (int)kc;
-	return mGetString.assign(ss.str());
+	for (int i = 0; i < sizeof(OIS::KeyNameToKeyCode) / sizeof(*OIS::KeyNameToKeyCode); ++i)
+		if(kc == (KeyCode)OIS::KeyNameToKeyCode[i].KeyCode)
+			return mGetString.assign(OIS::KeyNameToKeyCode[i].KeyName);
+	return mGetString.assign("");
 }
 
 //--------------------------------------------------------------------------------------------------//

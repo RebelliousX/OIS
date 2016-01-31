@@ -179,8 +179,8 @@ namespace OIS
 
 	struct
 	{
-		std::string KeyName;
-		KeyCode KeyCode;
+		std::string keyName;
+		KeyCode keyCode;
 	}
 	const KeyInfo[] = {
 		""						, KC_UNASSIGNED ,

@@ -54,8 +54,8 @@ namespace OIS
 		virtual KeyCode getAsKeyCode( const std::string &str ) 
 		{
 			for (int i = 0; i < sizeof(OIS::KeyInfo) / sizeof(*OIS::KeyInfo); ++i)
-				if (str == OIS::KeyInfo[i].KeyName)
-					return OIS::KeyInfo[i].KeyCode;
+				if (str == OIS::KeyInfo[i].keyName)
+					return OIS::KeyInfo[i].keyCode;
 			return KC_UNASSIGNED;
 		}
 

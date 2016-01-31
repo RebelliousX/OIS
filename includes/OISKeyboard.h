@@ -180,154 +180,154 @@ namespace OIS
 	struct
 	{
 		std::string KeyName;
-		unsigned char KeyCode;
+		KeyCode KeyCode;
 	}
-	const KeyNameToKeyCode[] = {
-		""						, 0x0	,
-		"ESCAPE"				, 0x1   ,
-		"1"						, 0x2   ,
-		"2"						, 0x3   ,
-		"3"						, 0x4   ,
-		"4"						, 0x5   ,
-		"5"						, 0x6   ,
-		"6"						, 0x7   ,
-		"7"						, 0x8   ,
-		"8"						, 0x9   ,
-		"9"						, 0xA   ,
-		"0"						, 0xB   ,
-		"MINUS"					, 0xC   ,        // - on main keyboard
-		"EQUALS"				, 0xD   ,
-		"BACK"				    , 0xE   ,        // backspace
-		"TAB"					, 0xF   ,
-		"Q"						, 0x10  ,
-		"W"						, 0x11  ,
-		"E"						, 0x12  ,
-		"R"						, 0x13  ,
-		"T"						, 0x14  ,
-		"Y"						, 0x15  ,
-		"U"						, 0x16  ,
-		"I"						, 0x17  ,
-		"O"						, 0x18  ,
-		"P"						, 0x19  ,
-		"LBRACKET"				, 0x1A  ,
-		"RBRACKET"				, 0x1B  ,
-		"RETURN"				, 0x1C  , 		// Enter on main keyboard
-		"LCONTROL"				, 0x1D  ,
-		"A"						, 0x1E  ,
-		"S"						, 0x1F  ,
-		"D"						, 0x20  ,
-		"F"						, 0x21  ,
-		"G"						, 0x22  ,
-		"H"						, 0x23  ,
-		"J"						, 0x24  ,
-		"K"						, 0x25  ,
-		"L"						, 0x26  ,
-		"SEMICOLON"				, 0x27  ,
-		"APOSTROPHE"			, 0x28  ,
-		"GRAVE"					, 0x29  , 		// accent grave
-		"LSHIFT"				, 0x2A  ,
-		"BACKSLASH"				, 0x2B  ,
-		"Z"						, 0x2C  ,
-		"X"						, 0x2D  ,
-		"C"						, 0x2E  ,
-		"V"						, 0x2F  ,
-		"B"						, 0x30  ,
-		"N"						, 0x31  ,
-		"M"						, 0x32  ,
-		"COMMA"					, 0x33  ,
-		"PERIOD"				, 0x34  , 		// . on main keyboard
-		"SLASH"					, 0x35  , 		// / on main keyboard
-		"RSHIFT"				, 0x36  ,
-		"MULTIPLY"				, 0x37  , 		// * on numeric keypad
-		"LMENU"					, 0x38  , 		// left Alt
-		"SPACE"					, 0x39  ,
-		"CAPITAL"				, 0x3A  ,
-		"F1"					, 0x3B  ,
-		"F2"					, 0x3C  ,
-		"F3"					, 0x3D  ,
-		"F4"					, 0x3E  ,
-		"F5"					, 0x3F  ,
-		"F6"					, 0x40  ,
-		"F7"					, 0x41  ,
-		"F8"					, 0x42  ,
-		"F9"					, 0x43  ,
-		"F10"					, 0x44  ,
-		"NUMLOCK"				, 0x45  ,
-		"SCROLL"				, 0x46  , 			// Scroll Lock
-		"NUMPAD7"				, 0x47  ,
-		"NUMPAD8"				, 0x48  ,
-		"NUMPAD9"				, 0x49  ,
-		"SUBTRACT"				, 0x4A  , 			// - on numeric keypad
-		"NUMPAD4"				, 0x4B  ,
-		"NUMPAD5"				, 0x4C  ,
-		"NUMPAD6"				, 0x4D  ,
-		"ADD"					, 0x4E  , 			// + on numeric keypad
-		"NUMPAD1"				, 0x4F  ,
-		"NUMPAD2"				, 0x50  ,
-		"NUMPAD3"				, 0x51  ,
-		"NUMPAD0"				, 0x52  ,
-		"DECIMAL"				, 0x53  , 			// . on numeric keypad
-		"OEM_102 < > | on UK/Germany keyboards"									, 0x56  ,
-		"F11"																	, 0x57  ,
-		"F12"																	, 0x58  ,
-		"F13 on (NEC PC98) "													, 0x64  ,
-		"F14 on (NEC PC98) "													, 0x65  ,
-		"F15 on (NEC PC98) "													, 0x66  ,
-		"KANA on (Japanese keyboard)"											, 0x70  ,
-		"ABNT_C1 / ? on Portugese (Brazilian) keyboards "						, 0x73  ,
-		"CONVERT on (Japanese keyboard)"										, 0x79  ,
-		"NOCONVERT on (Japanese keyboard)"										, 0x7B  ,
-		"YEN on (Japanese keyboard)"											, 0x7D  ,
-		"ABNT_C2 on Numpad . on Portugese (Brazilian) keyboards "				, 0x7E  ,
-		"NUMPADEQUALS = on numeric keypad (NEC PC98) "							, 0x8D  ,
-		"PREVTRACK on Previous Track (DIK_CIRCUMFLEX on Japanese keyboard) "	, 0x90  ,
-		"AT (NEC PC98) "					, 0x91  ,
-		"COLON (NEC PC98) "					, 0x92  ,
-		"UNDERLINE (NEC PC98) "				, 0x93  ,
-		"KANJI on (Japanese keyboard)"		, 0x94  ,
-		"STOP (NEC PC98) "		, 0x95  ,
-		"AX (Japan AX) "		, 0x96  ,
-		"UNLABELED (J3100) "	, 0x97  ,
-		"NEXTTRACK"		, 0x99  , 	// Next Track
-		"NUMPADENTER"	, 0x9C  , 	// Enter on numeric keypad
-		"RCONTROL"		, 0x9D,
-		"MUTE"			, 0xA0,		// Mute
-		"CALCULATOR"	, 0xA1,		// Calculator
-		"PLAYPAUSE"		, 0xA2,		// Play / Pause
-		"MEDIASTOP"		, 0xA4,		// Media Stop
-		"VOLUMEDOWN"	, 0xAE,		// Volume -
-		"VOLUMEUP"		, 0xB0,		// Volume +
-		"WEBHOME"		, 0xB2,		// Web home
-		"NUMPADCOMMA"	, 0xB3,		// , on numeric keypad (NEC PC98)
-		"DIVIDE"		, 0xB5,		// / on numeric keypad
-		"SYSRQ"			, 0xB7,
-		"RMENU"			, 0xB8,		// right Alt
-		"PAUSE"			, 0xC5,		// Pause
-		"HOME"			, 0xC7,		// Home on arrow keypad
-		"UP"			, 0xC8,		// UpArrow on arrow keypad
-		"PRIOR"			, 0xC9,		// PgUp on arrow keypad
-		"LEFT"			, 0xCB,		// LeftArrow on arrow keypad
-		"RIGHT"			, 0xCD,		// RightArrow on arrow keypad
-		"END"			, 0xCF,		// End on arrow keypad
-		"DOWN"			, 0xD0,		// DownArrow on arrow keypad
-		"NEXT"			, 0xD1,		// PgDn on arrow keypad
-		"INSERT"		, 0xD2,		// Insert on arrow keypad
-		"DELETE"		, 0xD3,		// Delete on arrow keypad
-		"LWIN"			, 0xDB,		// Left Windows key
-		"RWIN"			, 0xDC,		// Right Windows key
-		"APPS"			, 0xDD,		// AppMenu key
-		"POWER"			, 0xDE,		// System Power
-		"SLEEP"			, 0xDF,		// System Sleep
-		"WAKE"			, 0xE3,		// System Wake
-		"WEBSEARCH"		, 0xE5,		// Web Search
-		"WEBFAVORITES"	, 0xE6 ,	// Web Favorites
-		"WEBREFRESH"	, 0xE7,		// Web Refresh
-		"WEBSTOP"		, 0xE8,		// Web Stop
-		"WEBFORWARD"	, 0xE9,		// Web Forward
-		"WEBBACK"		, 0xEA,		// Web Back
-		"MYCOMPUTER"	, 0xEB,		// My Computer
-		"MAIL"			, 0xEC,		// Mail
-		"MEDIASELECT"	, 0xED  ,	// Media Select
+	const KeyInfo[] = {
+		""						, KC_UNASSIGNED ,
+		"ESCAPE"				, KC_ESCAPE     ,
+		"1"						, KC_1          ,
+		"2"						, KC_2          ,
+		"3"						, KC_3          ,
+		"4"						, KC_4          ,
+		"5"						, KC_5          ,
+		"6"						, KC_6          ,
+		"7"						, KC_7          ,
+		"8"						, KC_8          ,
+		"9"						, KC_9          ,
+		"0"						, KC_0          ,
+		"MINUS"					, KC_MINUS      ,			// - on main keyboard
+		"EQUALS"				, KC_EQUALS     ,
+		"BACK"				    , KC_BACK       ,			// backspace
+		"TAB"					, KC_TAB        ,
+		"Q"						, KC_Q          ,
+		"W"						, KC_W          ,
+		"E"						, KC_E          ,
+		"R"						, KC_R          ,
+		"T"						, KC_T          ,
+		"Y"						, KC_Y          ,
+		"U"						, KC_U          ,
+		"I"						, KC_I          ,
+		"O"						, KC_O          ,
+		"P"						, KC_P          ,
+		"LBRACKET"				, KC_LBRACKET   ,
+		"RBRACKET"				, KC_RBRACKET   ,
+		"RETURN"				, KC_RETURN     , 			// Enter on main keyboard
+		"LCONTROL"				, KC_LCONTROL   ,
+		"A"						, KC_A          ,
+		"S"						, KC_S          ,
+		"D"						, KC_D          ,
+		"F"						, KC_F          ,
+		"G"						, KC_G          ,
+		"H"						, KC_H          ,
+		"J"						, KC_J          ,
+		"K"						, KC_K          ,
+		"L"						, KC_L          ,
+		"SEMICOLON"				, KC_SEMICOLON  ,
+		"APOSTROPHE"			, KC_APOSTROPHE ,
+		"GRAVE"					, KC_GRAVE      , 			// accent grave
+		"LSHIFT"				, KC_LSHIFT     ,
+		"BACKSLASH"				, KC_BACKSLASH  ,
+		"Z"						, KC_Z          ,
+		"X"						, KC_X          ,
+		"C"						, KC_C          ,
+		"V"						, KC_V          ,
+		"B"						, KC_B          ,
+		"N"						, KC_N          ,
+		"M"						, KC_M          ,
+		"COMMA"					, KC_COMMA      ,
+		"PERIOD"				, KC_PERIOD     , 			// . on main keyboard
+		"SLASH"					, KC_SLASH      , 			// / on main keyboard
+		"RSHIFT"				, KC_RSHIFT     ,
+		"MULTIPLY"				, KC_MULTIPLY   , 			// * on numeric keypad
+		"LMENU"					, KC_LMENU      , 			// left Alt
+		"SPACE"					, KC_SPACE      ,
+		"CAPITAL"				, KC_CAPITAL    ,
+		"F1"					, KC_F1         ,
+		"F2"					, KC_F2         ,
+		"F3"					, KC_F3         ,
+		"F4"					, KC_F4         ,
+		"F5"					, KC_F5         ,
+		"F6"					, KC_F6         ,
+		"F7"					, KC_F7         ,
+		"F8"					, KC_F8         ,
+		"F9"					, KC_F9         ,
+		"F10"					, KC_F10        ,
+		"NUMLOCK"				, KC_NUMLOCK    ,
+		"SCROLL"				, KC_SCROLL     , 			// Scroll Lock
+		"NUMPAD7"				, KC_NUMPAD7    ,
+		"NUMPAD8"				, KC_NUMPAD8    ,
+		"NUMPAD9"				, KC_NUMPAD9    ,
+		"SUBTRACT"				, KC_SUBTRACT   , 			// - on numeric keypad
+		"NUMPAD4"				, KC_NUMPAD4    ,
+		"NUMPAD5"				, KC_NUMPAD5    ,
+		"NUMPAD6"				, KC_NUMPAD6    ,
+		"ADD"					, KC_ADD        , 			// + on numeric keypad
+		"NUMPAD1"				, KC_NUMPAD1    ,
+		"NUMPAD2"				, KC_NUMPAD2    ,
+		"NUMPAD3"				, KC_NUMPAD3    ,
+		"NUMPAD0"				, KC_NUMPAD0    ,
+		"DECIMAL"				, KC_DECIMAL	, 			// . on numeric keypad
+		"OEM_102"				, KC_OEM_102	,			/* < > | on UKKC_OEM_102    /Germany keyboards */			
+		"F11"					, KC_F11        ,
+		"F12"					, KC_F12		,
+		"F13"					, KC_F13        ,			/*  on (NEC PC98) */
+		"F14"					, KC_F14		,			/* on (NEC PC98) */
+		"F15"					, KC_F15		,			/* on (NEC PC98) */
+		"KANA"					, KC_KANA		,			/* on (Japanese keyboard) */
+		"ABNT_C1"				, KC_ABNT_C1	,			/* / ? on Portugese (Brazilian) keyboards */	
+		"CONVERT"				, KC_CONVERT	,			/* on (Japanese keyboard) */
+		"NOCONVERT"				, KC_NOCONVERT	,			/* on (Japanese keyboard) */
+		"YEN"					, KC_YEN		,			/* on (Japanese keyboard) */
+		"ABNT_C2"				, KC_ABNT_C2	,			/* on Numpad . on Portugese (Brazilian) keyboards */
+		"NUMPADEQUALS"			, KC_NUMPADEQUALS	,		/* = on numeric keypad (NEC PC98) */
+		"PREVTRACK"				, KC_PREVTRACK		,		/*on Previous Track (DIK_CIRCUMFLEX on Japanese keyboard) */
+		"AT"					, KC_AT				,		/* (NEC PC98) */
+		"COLON"					, KC_COLON			,		/* (NEC PC98) */
+		"UNDERLINE"				, KC_UNDERLINE		,		/* (NEC PC98) */
+		"KANJI"					, KC_KANJI			,		/* on (Japanese keyboard) */
+		"STOP"					, KC_STOP			,		/* (NEC PC98) */
+		"AX"					, KC_AX				,		/* (Japan AX) */
+		"UNLABELED"				, KC_UNLABELED		,		/* (J3100) */
+		"NEXTTRACK"				, KC_NEXTTRACK   	, 		// Next Track
+		"NUMPADENTER"			, KC_NUMPADENTER 	, 		// Enter on numeric keypad
+		"RCONTROL"				, KC_RCONTROL    	,
+		"MUTE"					, KC_MUTE        	,		// Mute
+		"CALCULATOR"			, KC_CALCULATOR  	,		// Calculator
+		"PLAYPAUSE"				, KC_PLAYPAUSE   	,		// Play / Pause
+		"MEDIASTOP"				, KC_MEDIASTOP   	,		// Media Stop
+		"VOLUMEDOWN"			, KC_VOLUMEDOWN  	,		// Volume -
+		"VOLUMEUP"				, KC_VOLUMEUP    	,		// Volume +
+		"WEBHOME"				, KC_WEBHOME     	,		// Web home
+		"NUMPADCOMMA"			, KC_NUMPADCOMMA 	,		// , on numeric keypad (NEC PC98)
+		"DIVIDE"				, KC_DIVIDE      	,		// / on numeric keypad
+		"SYSRQ"					, KC_SYSRQ       	,
+		"RMENU"					, KC_RMENU       	,		// right Alt
+		"PAUSE"					, KC_PAUSE       	,		// Pause
+		"HOME"					, KC_HOME        	,		// Home on arrow keypad
+		"UP"					, KC_UP          	,		// UpArrow on arrow keypad
+		"PRIOR"					, KC_PGUP        	,		// PgUp on arrow keypad
+		"LEFT"					, KC_LEFT        	,		// LeftArrow on arrow keypad
+		"RIGHT"					, KC_RIGHT       	,		// RightArrow on arrow keypad
+		"END"					, KC_END         	,		// End on arrow keypad
+		"DOWN"					, KC_DOWN        	,		// DownArrow on arrow keypad
+		"NEXT"					, KC_PGDOWN      	,		// PgDn on arrow keypad
+		"INSERT"				, KC_INSERT      	,		// Insert on arrow keypad
+		"DELETE"				, KC_DELETE      	,		// Delete on arrow keypad
+		"LWIN"					, KC_LWIN        	,		// Left Windows key
+		"RWIN"					, KC_RWIN        	,		// Right Windows key
+		"APPS"					, KC_APPS        	,		// AppMenu key
+		"POWER"					, KC_POWER       	,		// System Power
+		"SLEEP"					, KC_SLEEP       	,		// System Sleep
+		"WAKE"					, KC_WAKE        	,		// System Wake
+		"WEBSEARCH"				, KC_WEBSEARCH   	,		// Web Search
+		"WEBFAVORITES"			, KC_WEBFAVORITES	,		// Web Favorites
+		"WEBREFRESH"			, KC_WEBREFRESH  	,		// Web Refresh
+		"WEBSTOP"				, KC_WEBSTOP     	,		// Web Stop
+		"WEBFORWARD"			, KC_WEBFORWARD  	,		// Web Forward
+		"WEBBACK"				, KC_WEBBACK     	,		// Web Back
+		"MYCOMPUTER"			, KC_MYCOMPUTER  	,		// My Computer
+		"MAIL"					, KC_MAIL        	,		// Mail
+		"MEDIASELECT"			, KC_MEDIASELECT 	,		// Media Select
 	};
 	
 	/**

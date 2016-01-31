@@ -53,10 +53,10 @@ namespace OIS
 		/** @copydoc Keyboard::getAsKeyCode */
 		virtual KeyCode getAsKeyCode( const std::string &str ) 
 		{
-			for (int i = 0; i < sizeof(OIS::KeyNameToKeyCode) / sizeof(*OIS::KeyNameToKeyCode); ++i)
-				if (str == OIS::KeyNameToKeyCode[i].KeyName)
-					return (KeyCode)OIS::KeyNameToKeyCode[i].KeyCode;
-			return (KeyCode) 0;
+			for (int i = 0; i < sizeof(OIS::KeyInfo) / sizeof(*OIS::KeyInfo); ++i)
+				if (str == OIS::KeyInfo[i].KeyName)
+					return OIS::KeyInfo[i].KeyCode;
+			return KC_UNASSIGNED;
 		}
 
 		/** @copydoc Keyboard::copyKeyStates */

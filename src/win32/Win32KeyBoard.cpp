@@ -288,10 +288,10 @@ bool Win32Keyboard::isKeyDown( KeyCode key ) const
 //--------------------------------------------------------------------------------------------------//
 const std::string& Win32Keyboard::getAsString(KeyCode kc)
 {
-	for (int i = 0; i < sizeof(OIS::KeyNameToKeyCode) / sizeof(*OIS::KeyNameToKeyCode); ++i)
-		if(kc == (KeyCode)OIS::KeyNameToKeyCode[i].KeyCode)
-			return mGetString.assign(OIS::KeyNameToKeyCode[i].KeyName);
-	return mGetString.assign(OIS::KeyNameToKeyCode[KC_UNASSIGNED].KeyName);
+	for (int i = 0; i < sizeof(OIS::KeyInfo) / sizeof(*OIS::KeyInfo); ++i)
+		if(kc == (KeyCode)OIS::KeyInfo[i].KeyCode)
+			return mGetString.assign(OIS::KeyInfo[i].KeyName);
+	return mGetString.assign(OIS::KeyInfo[0].KeyName);
 }
 
 //--------------------------------------------------------------------------------------------------//
